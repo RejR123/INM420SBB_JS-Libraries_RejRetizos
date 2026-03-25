@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover 7,641 islands — plan your Philippine island-hopping adventure across Palawan, Boracay, Cebu, Bohol and Siargao." />
+    <title>Explorer PH – Island Hopping in the Philippines</title>
+
+    <!-- ── google fonts: cormorant garamond (display) + outfit (body) ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ── 1. glide.js css ── -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css" />
+
+    <!-- ── 2. aos css ── -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- ── 3. lightbox2 css ── -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
+    <!-- ── 4. leaflet css ── -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- ── project stylesheet ── -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <!-- ============================================================
+         SITE HEADER & PRIMARY NAVIGATION
+    ============================================================ -->
+    <header class="site-header" id="site-header" role="banner">
+      <nav class="nav" aria-label="primary navigation">
+
+        <!-- brand logo -->
+        <a href="#hero" class="nav__logo" aria-label="Island Hopping Philippines – home">
+          <span class="nav__logo-icon" aria-hidden="true"></span>
+          <span class="nav__logo-text">Explorer&nbsp;PH</span>
+        </a>
+
+        <!-- hamburger (mobile only) -->
+        <button
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-controls="nav-links"
+          aria-expanded="false"
+          aria-label="open navigation menu"
+        >
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+        </button>
+
+        <!-- link list -->
+        <ul class="nav__links" id="nav-links" role="list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#islands">Islands</a></li>
+          <li><a class="nav__link" href="#gallery">Gallery</a></li>
+          <li><a class="nav__link" href="#map">Map</a></li>
+          <li><a class="nav__link" href="#budget">Budget</a></li>
+          <li><a class="nav__link nav__link--cta" href="#contact">Plan Trip</a></li>
+        </ul>
+
+      </nav>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+    ============================================================ -->
+    <main id="main-content">
+
+      <!-- ========================================================
+           SECTION 1: HERO  –  glide.js full-width image slider
+      ======================================================== -->
+      <section class="hero" id="hero" aria-label="hero image carousel">
+
+        <div class="glide hero__glide" id="hero-glide">
+
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides" role="list">
+
+              <!-- slide 1 – palawan lagoon -->
+              <li
+                class="glide__slide hero__slide"
+                data-bg="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1800&q=80"
+              >
+                <div class="hero__overlay" aria-hidden="true"></div>
+                <div class="hero__content">
+                  <p class="hero__eyebrow">The Philippines</p>
+                  <h1 class="hero__title">
+                    Island Hopping<br /><em>in the Philippines</em>
+                  </h1>
+                  <p class="hero__tagline">7,641 islands. Infinite adventures. One lifetime to explore.</p>
+                  <a class="btn btn--hero" href="#islands">Explore Islands</a>
+                </div>
+              </li>
+
+              <!-- slide 2 – turquoise cove -->
+              <li
+                class="glide__slide hero__slide"
+                data-bg="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1800&q=80"
+              >
+                <div class="hero__overlay" aria-hidden="true"></div>
+                <div class="hero__content">
+                  <p class="hero__eyebrow">Crystal Waters</p>
+                  <h1 class="hero__title">
+                    Paradise<br /><em>Awaits You</em>
+                  </h1>
+                  <p class="hero__tagline">Dive into the warmest, clearest waters on earth.</p>
+                  <a class="btn btn--hero" href="#gallery">See Gallery</a>
+                </div>
+              </li>
+
+              <!-- slide 3 – sunset beach -->
+              <li
+                class="glide__slide hero__slide"
+                data-bg="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=80"
+              >
+                <div class="hero__overlay" aria-hidden="true"></div>
+                <div class="hero__content">
+                  <p class="hero__eyebrow">Golden Horizons</p>
+                  <h1 class="hero__title">
+                    Every Day<br /><em>Ends in Gold</em>
+                  </h1>
+                  <p class="hero__tagline">Powdery sands, painted skies, and complete serenity.</p>
+                  <a class="btn btn--hero" href="#contact">Plan Your Trip</a>
+                </div>
+              </li>
+
+            </ul>
+          </div><!-- /.glide__track -->
+
+          <!-- arrow controls -->
+          <div class="glide__arrows hero__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous slide">&#8592;</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next slide">&#8594;</button>
+          </div>
+
+          <!-- dot navigation -->
+          <div class="glide__bullets hero__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0" aria-label="slide 1"></button>
+            <button class="glide__bullet" data-glide-dir="=1" aria-label="slide 2"></button>
+            <button class="glide__bullet" data-glide-dir="=2" aria-label="slide 3"></button>
+          </div>
+
+        </div><!-- /.hero__glide -->
+
+        <!-- scroll hint animation -->
+        <div class="hero__scroll" aria-hidden="true">
+          <span class="hero__scroll-text">scroll</span>
+          <span class="hero__scroll-line"></span>
+        </div>
+
+      </section><!-- /.hero -->
+
+
+      <!-- ========================================================
+           SECTION 2: ABOUT  –  Philippines overview
+      ======================================================== -->
+      <section class="about" id="about" aria-labelledby="about-h2">
+        <div class="container">
+          <div class="about__grid">
+
+            <!-- text -->
+            <div class="about__text" data-aos="fade-right" data-aos-duration="800">
+              <span class="eyebrow">About the Destination</span>
+              <h2 class="section-title" id="about-h2">A Nation Forged<br />by the Sea</h2>
+              <p class="about__lead">
+                Scattered across the western Pacific like emeralds on sapphire silk,
+                the Philippines is an archipelago of <strong>7,641 islands</strong> —
+                each one a world unto itself.
+              </p>
+              <p class="about__body">
+                From Palawan's UNESCO-listed underground rivers to Boracay's legendary
+                white-sand shores, from Cebu's Spanish-colonial heritage to Siargao's
+                world-class surf breaks, the Philippines delivers a travel experience
+                as diverse as it is breathtaking. Warm locals, extraordinary cuisine,
+                and the planet's most biodiverse coral reefs make this Southeast Asian
+                gem one of history's greatest island destinations.
+              </p>
+              <!-- statistics -->
+              <div class="about__stats" role="list">
+                <div class="stat" role="listitem">
+                  <span class="stat__number">7,641</span>
+                  <span class="stat__label">Islands</span>
+                </div>
+                <div class="stat" role="listitem">
+                  <span class="stat__number">36k+</span>
+                  <span class="stat__label">km Coastline</span>
+                </div>
+                <div class="stat" role="listitem">
+                  <span class="stat__number">#1</span>
+                  <span class="stat__label">Dive Destination</span>
+                </div>
+              </div>
+            </div><!-- /.about__text -->
+
+            <!-- images -->
+            <div class="about__media" data-aos="fade-left" data-aos-duration="800" data-aos-delay="120">
+              <img
+                src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=900&q=80"
+                alt="aerial view of Philippine island with turquoise lagoon and limestone karst"
+                class="about__img about__img--main"
+                loading="lazy"
+                width="900"
+                height="675"
+              />
+            
+              <div class="about__badge">
+                <span aria-hidden="true">🌺</span>
+                <span>Best time: Nov – May</span>
+              </div>
+            </div><!-- /.about__media -->
+
+          </div><!-- /.about__grid -->
+        </div><!-- /.container -->
+      </section><!-- /.about -->
+
+
+      <!-- ========================================================
+           SECTION 3: FEATURED ISLANDS  –  glide.js card carousel
+      ======================================================== -->
+      <section class="islands" id="islands" aria-labelledby="islands-h2">
+        <div class="container">
+
+          <header class="sec-header" data-aos="fade-up">
+            <span class="eyebrow">Featured Destinations</span>
+            <h2 class="section-title" id="islands-h2">Top Islands to Explore</h2>
+            <p class="sec-header__sub">Five legendary destinations. Five completely different adventures.</p>
+          </header>
+
+          <div class="glide islands__glide" id="islands-glide" data-aos="fade-up" data-aos-delay="80">
+
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides" role="list">
+
+                <!-- card: palawan -->
+                <li class="glide__slide">
+                  <article class="icard">
+                    <div class="icard__media">
+                      <img
+                        src="assets/images/things-to-do-el-nido-island-hopping-tour-2.jpg"
+                        alt="El Nido lagoon Palawan – limestone cliffs and turquoise water"
+                        class="icard__img"
+                        loading="lazy"
+                        width="700"
+                        height="480"
+                      />
+                      <span class="icard__badge">Editor's Pick</span>
+                    </div>
+                    <div class="icard__body">
+                      <h3 class="icard__name">Palawan</h3>
+                      <p class="icard__desc">
+                        Home to the Puerto Princesa Underground River — a UNESCO World Heritage Site —
+                        and the jaw-dropping lagoons of El Nido and Coron. Often called the most
+                        beautiful island on earth.
+                      </p>
+                      <ul class="icard__tags" role="list">
+                        <li class="tag">⛵ Island Hopping</li>
+                        <li class="tag">🤿 Diving</li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- card: boracay -->
+                <li class="glide__slide">
+                  <article class="icard">
+                    <div class="icard__media">
+                      <img
+                        src="assets/images/boracay.jpg"
+                        alt="Boracay White Beach at sunset with colourful sailboats"
+                        class="icard__img"
+                        loading="lazy"
+                        width="700"
+                        height="480"
+                      />
+                      <span class="icard__badge icard__badge--gold">Most Popular</span>
+                    </div>
+                    <div class="icard__body">
+                      <h3 class="icard__name">Boracay</h3>
+                      <p class="icard__desc">
+                        World-renowned White Beach stretches 4 km of powdery talcum-white sand.
+                        The perfect blend of relaxation, water sports, and vibrant nightlife in
+                        the heart of the Visayas.
+                      </p>
+                      <ul class="icard__tags" role="list">
+                        <li class="tag">🏄 Water Sports</li>
+                        <li class="tag">🌅 Sunsets</li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- card: cebu -->
+                <li class="glide__slide">
+                  <article class="icard">
+                    <div class="icard__media">
+                      <img
+                        src="assets/images/canyoneeringfeature.jpg"
+                        alt="Kawasan Canyon waterfall in Cebu – turquoise river pool"
+                        class="icard__img"
+                        loading="lazy"
+                        width="700"
+                        height="480"
+                      />
+                    </div>
+                    <div class="icard__body">
+                      <h3 class="icard__name">Cebu</h3>
+                      <p class="icard__desc">
+                        The Queen City of the South blends 500 years of Spanish colonial heritage
+                        with pristine beaches, whale shark encounters in Oslob, and the stunning
+                        Kawasan Canyon waterfalls.
+                      </p>
+                      <ul class="icard__tags" role="list">
+                        <li class="tag">🦈 Whale Sharks</li>
+                        <li class="tag">🏛 Heritage</li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- card: bohol -->
+                <li class="glide__slide">
+                  <article class="icard">
+                    <div class="icard__media">
+                      <img
+                        src="assets/images/Bohol-Chocolate-Hills-sunrise-Carmen-Bohol-Philippines-120609-053753.jpg"
+                        alt="Chocolate Hills of Bohol – hundreds of cone-shaped mounds"
+                        class="icard__img"
+                        loading="lazy"
+                        width="700"
+                        height="480"
+                      />
+                    </div>
+                    <div class="icard__body">
+                      <h3 class="icard__name">Bohol</h3>
+                      <p class="icard__desc">
+                        Famous for the otherworldly Chocolate Hills — over 1,200 cone-shaped mounds —
+                        and the world's smallest primate, the tarsier. Panglao Island's white beaches
+                        are a short bridge away.
+                      </p>
+                      <ul class="icard__tags" role="list">
+                        <li class="tag">🌿 Nature</li>
+                        <li class="tag">🐒 Wildlife</li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- card: siargao -->
+                <li class="glide__slide">
+                  <article class="icard">
+                    <div class="icard__media">
+                      <img
+                        src="assets/images/siargao.jpg"
+                        alt="Siargao Cloud 9 surf break – surfer dropping into a barreling wave"
+                        class="icard__img"
+                        loading="lazy"
+                        width="700"
+                        height="480"
+                      />
+                      <span class="icard__badge icard__badge--teal">Surf Capital</span>
+                    </div>
+                    <div class="icard__body">
+                      <h3 class="icard__name">Siargao</h3>
+                      <p class="icard__desc">
+                        The surf capital of the Philippines draws riders from around the world to
+                        Cloud 9. Beyond the waves: turquoise lagoons, mangrove forests, rock pools,
+                        and pure island soul.
+                      </p>
+                      <ul class="icard__tags" role="list">
+                        <li class="tag">🏄 Surfing</li>
+                        <li class="tag">🌊 Lagoons</li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+              </ul>
+            </div><!-- /.glide__track -->
+
+            <!-- island slider controls -->
+            <div class="glide__arrows islands__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous island">&#8592;</button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next island">&#8594;</button>
+            </div>
+            <div class="glide__bullets islands__bullets" data-glide-el="controls[nav]">
+              <button class="glide__bullet" data-glide-dir="=0" aria-label="Palawan"></button>
+              <button class="glide__bullet" data-glide-dir="=1" aria-label="Boracay"></button>
+              <button class="glide__bullet" data-glide-dir="=2" aria-label="Cebu"></button>
+              <button class="glide__bullet" data-glide-dir="=3" aria-label="Bohol"></button>
+              <button class="glide__bullet" data-glide-dir="=4" aria-label="Siargao"></button>
+            </div>
+
+          </div><!-- /.islands__glide -->
+        </div><!-- /.container -->
+      </section><!-- /.islands -->
+
+
+      <!-- ========================================================
+           SECTION 4: GALLERY  –  lightbox2 photo grid
+      ======================================================== -->
+      <section class="gallery" id="gallery" aria-labelledby="gallery-h2">
+        <div class="container">
+
+          <header class="sec-header sec-header--light" data-aos="fade-up">
+            <span class="eyebrow eyebrow--light">Visual Stories</span>
+            <h2 class="section-title section-title--light" id="gallery-h2">Through the Lens</h2>
+            <p class="sec-header__sub sec-header__sub--light">Click any photo to open it full-screen.</p>
+          </header>
+
+          <!-- gallery grid: 6 photos in a clean named-area layout -->
+          <div class="gallery__grid" role="list">
+
+            <!-- item a: big feature – El Nido -->
+            <div class="gallery__item gallery__item--a" data-aos="fade-up" data-aos-delay="0" role="listitem">
+              <a
+                href="assets/images/nig algoon.jpg"
+                data-lightbox="ph-gallery"
+                data-title="Big Lagoon — El Nido, Palawan"
+                class="gallery__link"
+              >
+                <img
+                  src="assets/images/nig algoon.jpg"
+                  alt="aerial view over El Nido lagoon Palawan – emerald water flanked by sheer limestone"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="900"
+                  height="600"
+                />
+                <span class="gallery__caption">El Nido, Palawan</span>
+              </a>
+            </div>
+
+            <!-- item b: Boracay -->
+            <div class="gallery__item gallery__item--b" data-aos="fade-up" data-aos-delay="60" role="listitem">
+              <a
+                href="assets/images/ohxan3mxt7xb1.jpg"
+                data-lightbox="ph-gallery"
+                data-title="White Beach — Boracay at dusk"
+                class="gallery__link"
+              >
+                <img
+                  src="assets/images/boracay sunset.jpg"
+                  alt="Boracay White Beach at sunset with paraw sailboats"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <span class="gallery__caption">Boracay White Beach</span>
+              </a>
+            </div>
+
+            <!-- item c: Siargao surf (tall portrait) -->
+            <div class="gallery__item gallery__item--c" data-aos="fade-up" data-aos-delay="80" role="listitem">
+              <a
+                href="assets/images/Boardwalk-Siargao-1024x768.jpg"
+                data-lightbox="ph-gallery"
+                data-title="Cloud 9 — Siargao Surf Break"
+                class="gallery__link"
+              >
+                <img
+                  src="assets/images/surf.jpg"
+                  alt="surfer riding the famous Cloud 9 barrel wave in Siargao"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="600"
+                  height="800"
+                />
+                <span class="gallery__caption">Cloud 9, Siargao</span>
+              </a>
+            </div>
+
+            <!-- item d: Chocolate Hills -->
+            <div class="gallery__item gallery__item--d" data-aos="fade-up" data-aos-delay="40" role="listitem">
+              <a
+                href="assets/images/chocolate-hills-sunrise-819x1024.jpeg"
+                data-lightbox="ph-gallery"
+                data-title="Chocolate Hills — Bohol"
+                class="gallery__link"
+              >
+                <img
+                  src="assets/images/chocolate-hills-sunrise-819x1024.jpeg"
+                  alt="Chocolate Hills of Bohol at sunrise – 1200 cone-shaped mounds"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <span class="gallery__caption">Chocolate Hills, Bohol</span>
+              </a>
+            </div>
+
+            <!-- item e: Hidden beach -->
+            <div class="gallery__item gallery__item--e" data-aos="fade-up" data-aos-delay="100" role="listitem">
+              <a
+                href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=90"
+                data-lightbox="ph-gallery"
+                data-title="Hidden tropical beach"
+                class="gallery__link"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=75"
+                  alt="pristine tropical beach with gentle turquoise waves"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <span class="gallery__caption">Hidden Beach</span>
+              </a>
+            </div>
+
+            <!-- item f: Traditional bancas (wide banner) -->
+            <div class="gallery__item gallery__item--f" data-aos="fade-up" data-aos-delay="60" role="listitem">
+              <a
+                href="assets/images/istockphoto-2149092444-612x612.jpg"
+                data-lightbox="ph-gallery"
+                data-title="Traditional bancas — Philippine beach"
+                class="gallery__link"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=900&q=75"
+                  alt="colourful traditional Filipino outrigger bancas on a white beach"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="900"
+                  height="500"
+                />
+                <span class="gallery__caption">Traditional Bancas</span>
+              </a>
+            </div>
+
+            <!-- item g: Rice terraces / lush greenery -->
+            <div class="gallery__item gallery__item--g" data-aos="fade-up" data-aos-delay="80" role="listitem">
+            
+                <img
+                  src="assets/images/shutterstock_634025597-e1730712247519.jpg"
+                  alt="ancient Banaue rice terraces carved into the Ifugao mountains"
+                  class="gallery__img"
+                  loading="lazy"
+                  width="700"
+                  height="500"
+                />
+                <span class="gallery__caption">Banaue Rice Terraces</span>
+              </a>
+            </div>
+
+          </div><!-- /.gallery__grid -->
+        </div><!-- /.container -->
+      </section><!-- /.gallery -->
+
+
+      <!-- ========================================================
+           SECTION 5: MAP  –  leaflet.js interactive map
+      ======================================================== -->
+      <section class="map-sec" id="map" aria-labelledby="map-h2">
+        <div class="container">
+
+          <header class="sec-header" data-aos="fade-up">
+            <span class="eyebrow">Navigate the Archipelago</span>
+            <h2 class="section-title" id="map-h2">Island Locations</h2>
+            <p class="sec-header__sub">Click each pin to learn about the destination.</p>
+          </header>
+
+          <div class="map-sec__wrap" data-aos="fade-up" data-aos-delay="100">
+            <!-- leaflet map mount -->
+            <div
+              id="ph-map"
+              class="ph-map"
+              aria-label="interactive map of Philippine island destinations"
+              role="application"
+            ></div>
+          </div>
+
+        </div><!-- /.container -->
+      </section><!-- /.map-sec -->
+
+
+      <!-- ========================================================
+           SECTION 6: BUDGET  –  chart.js stacked bar chart
+      ======================================================== -->
+      <section class="budget" id="budget" aria-labelledby="budget-h2">
+        <div class="container">
+
+          <header class="sec-header" data-aos="fade-up">
+            <span class="eyebrow">Travel Smart</span>
+            <h2 class="section-title" id="budget-h2">Average Daily Budget</h2>
+            <p class="sec-header__sub">Estimated costs in USD per person per day (budget to mid-range traveller).</p>
+          </header>
+
+          <div class="budget__grid">
+
+            <!-- chart canvas -->
+            <div class="budget__chart-wrap" data-aos="fade-right" data-aos-duration="800">
+              <canvas
+                id="budget-chart"
+                role="img"
+                aria-label="stacked bar chart comparing daily travel costs across five Philippine islands"
+              ></canvas>
+            </div>
+
+            <!-- legend + notes -->
+            <div class="budget__legend" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+              <h3 class="budget__legend-title">What's Included</h3>
+              <ul class="budget__legend-list" role="list">
+                <li class="budget__legend-item">
+                  <span class="ldot ldot--a" aria-hidden="true"></span>
+                  <div>
+                    <strong>Accommodation</strong>
+                    <p>Guesthouses to mid-range hotels</p>
+                  </div>
+                </li>
+                <li class="budget__legend-item">
+                  <span class="ldot ldot--b" aria-hidden="true"></span>
+                  <div>
+                    <strong>Food &amp; Drinks</strong>
+                    <p>Local carenderias to casual restaurants</p>
+                  </div>
+                </li>
+                <li class="budget__legend-item">
+                  <span class="ldot ldot--c" aria-hidden="true"></span>
+                  <div>
+                    <strong>Transport</strong>
+                    <p>Tricycles, habal-habal, and bangka boats</p>
+                  </div>
+                </li>
+                <li class="budget__legend-item">
+                  <span class="ldot ldot--d" aria-hidden="true"></span>
+                  <div>
+                    <strong>Activities</strong>
+                    <p>Tours, island hopping, entrance fees</p>
+                  </div>
+                </li>
+              </ul>
+              <p class="budget__disclaimer">* Costs are approximate and subject to seasonal variation.</p>
+            </div>
+
+          </div><!-- /.budget__grid -->
+        </div><!-- /.container -->
+      </section><!-- /.budget -->
+
+
+      <!-- ========================================================
+           SECTION 7: CONTACT  –  plan-trip enquiry form
+      ======================================================== -->
+      <section class="contact" id="contact" aria-labelledby="contact-h2">
+        <div class="contact__bg" aria-hidden="true"></div>
+
+        <div class="container">
+          <div class="contact__grid">
+
+            <!-- left: info -->
+            <div class="contact__info" data-aos="fade-right" data-aos-duration="800">
+              <span class="eyebrow eyebrow--light">Start Your Journey</span>
+              <h2 class="section-title contact__title" id="contact-h2">
+                Let's Plan<br /><em>Your Trip</em>
+              </h2>
+              <p class="contact__intro">
+                Tell us your dream destination and we'll craft the perfect Philippine island
+                adventure — tailored to your budget, timeframe, and travel style.
+              </p>
+              <ul class="contact__perks" role="list">
+                <li>✈️&nbsp; Personalised itineraries</li>
+                <li>🏨&nbsp; Handpicked accommodation</li>
+                <li>⛵&nbsp; Private island-hopping tours</li>
+                <li>📋&nbsp; Visa &amp; travel guidance</li>
+              </ul>
+            </div><!-- /.contact__info -->
+
+            <!-- right: form -->
+            <div class="contact__form-wrap" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+              <form class="cform" id="contact-form" novalidate aria-label="plan your trip enquiry form">
+
+                <div class="cform__group">
+                  <label class="cform__label" for="f-name">Full Name</label>
+                  <input
+                    class="cform__input"
+                    type="text"
+                    id="f-name"
+                    name="name"
+                    placeholder="e.g. Maria Santos"
+                    required
+                    autocomplete="name"
+                  />
+                  <span class="cform__error" id="f-name-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="cform__group">
+                  <label class="cform__label" for="f-email">Email Address</label>
+                  <input
+                    class="cform__input"
+                    type="email"
+                    id="f-email"
+                    name="email"
+                    placeholder="e.g. maria@email.com"
+                    required
+                    autocomplete="email"
+                  />
+                  <span class="cform__error" id="f-email-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="cform__group">
+                  <label class="cform__label" for="f-dest">Preferred Destination</label>
+                  <select class="cform__input cform__select" id="f-dest" name="destination" required>
+                    <option value="" disabled selected>Choose an island…</option>
+                    <option value="palawan">Palawan</option>
+                    <option value="boracay">Boracay</option>
+                    <option value="cebu">Cebu</option>
+                    <option value="bohol">Bohol</option>
+                    <option value="siargao">Siargao</option>
+                    <option value="multi">Multi-island hopping</option>
+                  </select>
+                  <span class="cform__error" id="f-dest-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="cform__group">
+                  <label class="cform__label" for="f-date">Planned Travel Date</label>
+                  <input
+                    class="cform__input"
+                    type="date"
+                    id="f-date"
+                    name="travel-date"
+                    required
+                  />
+                  <span class="cform__error" id="f-date-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="cform__group">
+                  <label class="cform__label" for="f-msg">
+                    Additional Notes
+                    <span class="cform__optional">(optional)</span>
+                  </label>
+                  <textarea
+                    class="cform__input cform__textarea"
+                    id="f-msg"
+                    name="message"
+                    rows="4"
+                    placeholder="Group size, interests, budget range…"
+                  ></textarea>
+                </div>
+
+                <button class="btn btn--submit" type="submit">
+                  <span class="btn__text">Send My Enquiry</span>
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </button>
+
+                <!-- success confirmation (hidden by default) -->
+                <div class="cform__success" id="form-success" role="status" aria-live="polite" hidden>
+                  🎉 Thank you! We'll be in touch within 24 hours.
+                </div>
+
+              </form>
+            </div><!-- /.contact__form-wrap -->
+
+          </div><!-- /.contact__grid -->
+        </div><!-- /.container -->
+      </section><!-- /.contact -->
+
+    </main><!-- /#main-content -->
+
+
+    <!-- ============================================================
+         SITE FOOTER
+    ============================================================ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+
+        <div class="footer__grid">
+
+          <div class="footer__brand">
+            <a href="#hero" class="footer__logo" aria-label="Explorer PH home">Explorer PH</a>
+            <p class="footer__tagline">Discover the archipelago one island at a time.</p>
+          </div>
+
+          <nav class="footer__nav" aria-label="footer explore links">
+            <h3 class="footer__heading">Explore</h3>
+            <ul role="list">
+              <li><a href="#about">About the Philippines</a></li>
+              <li><a href="#islands">Featured Islands</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#map">Island Map</a></li>
+              <li><a href="#budget">Travel Budget</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__destinations">
+            <h3 class="footer__heading">Destinations</h3>
+            <ul role="list">
+              <li>Palawan</li>
+              <li>Boracay</li>
+              <li>Cebu</li>
+              <li>Bohol</li>
+              <li>Siargao</li>
+            </ul>
+          </div>
+
+          <address class="footer__contact">
+            <h3 class="footer__heading">Contact</h3>
+            <p><a href="/cdn-cgi/l/email-protection#4b232e2727240b3b232238272a252f3865282426">📧 <span class="__cf_email__" data-cfemail="2d45484141426d5d45445e414c43495e034e4240">Exploreph@gmail.com</span></a></p>
+            <p><a href="tel:+6328888000">📞 +63 2 8888 0000</a></p>
+            <p>📍 Pagadian, Philippines</p>
+          </address>
+
+        </div><!-- /.footer__grid -->
+
+        <div class="footer__bottom">
+          <p>&copy; 2026 Explorer PH. Built with ☀️ and saltwater.</p>
+          <p>Photos via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+        </div>
+
+      </div><!-- /.container -->
+    </footer><!-- /.site-footer -->
+
+
+    <!-- ============================================================
+         SCRIPTS – placed immediately before end of body
+         order: jquery, libraries, then custom script.js
+    ============================================================ -->
+
+    <!-- jquery (lightbox2 dependency) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 1. glide.js – slider -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+
+    <!-- 2. aos – animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- 3. lightbox2 – gallery lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <!-- 4. leaflet.js – interactive map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- 5. chart.js – budget bar chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- all project javascript in one external file -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
